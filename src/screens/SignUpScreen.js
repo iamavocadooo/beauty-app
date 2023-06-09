@@ -1,6 +1,5 @@
 import React from "react"
 import { View, Image, StyleSheet } from "react-native"
-import Logo from '../images/logo.jpg'
 import { SignUp } from "../components/SignUp"
 
 

@@ -1,6 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AboutColledgeScreen } from '../screens/AboutColledgeScreen';
-import { SubmitAppScreen } from '../screens/SubmitAppScreen';
 import { SignInScreen } from '../screens/SignInScreen';
 import {Entypo, Feather, Ionicons, MaterialCommunityIcons, MaterialIcons, SimpleLineIcons} from '@expo/vector-icons'
 import { CatalogScreen } from '../screens/CatalogScreen';
