@@ -8,12 +8,12 @@ import {getStorage} from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyALYr8Fs0QXckdK68J1HAbG2ytV1WelR0A",
-    authDomain: "gopolytech-97cea.firebaseapp.com",
-    projectId: "gopolytech-97cea",
-    storageBucket: "gopolytech-97cea.appspot.com",
-    messagingSenderId: "115500997984",
-    appId: "1:115500997984:web:a760d5e6d8ebf14ebdd205"
+    apiKey: "AIzaSyAt0y8FlOPpEfW5KqhmHns3Y0PA0Qhu4Ek",
+    authDomain: "beautyapp-c8768.firebaseapp.com",
+    projectId: "beautyapp-c8768",
+    storageBucket: "beautyapp-c8768.appspot.com",
+    messagingSenderId: "765726767404",
+    appId: "1:765726767404:web:5fef8333769eaa86ca1489"
   };
 
 // Initialize Firebase

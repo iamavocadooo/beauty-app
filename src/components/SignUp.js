@@ -13,12 +13,19 @@ export const SignUp = ({navigation}) => {
     const {f, setLocalEmail} = useContext(AppContext)
     const[loginValue, setLoginValue] = useState('');
     const[passwordValue, setPasswordValue] = useState('');
+    const[nameValue, setNameValue] = useState('')
     const[error, setError] = useState(false)
     const[confirmPasswordValue, setConfirmPasswordValue] = useState('');
     const minNumberofChars = 7;
     const maxNumberofChars = 20;
     const regularExpression  = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
     const handleSignUp = (email, password) => {
+    
+      if (nameValue === ' ' && nameValue === '') {
+        setError(true)
+          return false
+      }
+    
     if (passwordValue !== confirmPasswordValue) {
       setError(true)
         return false
@@ -34,36 +41,19 @@ export const SignUp = ({navigation}) => {
       createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in 
-        if (!auth.currentUser.emailVerified) {
-          console.log('r')
-          sendEmailVerification(auth.currentUser).then((response) => {
-            console.log(response)
-          } ).catch(error => {
-            console.log(error)
-          })
-        }
+        
         const user = userCredential.user;
         setError(false)
         addDoc(collection(database, "users"), {
-          studentId: auth.currentUser.uid,
-          name:'',
-          surname: '',
-          dadname: '',
-          chats: [],
-          posts: [],
-          isStudent: false,
-          nickName: '',
-          groupName: ''
-        })
-
-        addDoc(collection(database, "bank"), {
-          studentId: auth.currentUser.uid,
-          bankScore: 0,
-          studyPay: 0
+          userId: auth.currentUser.uid,
+          name: nameValue,
+          favorites: [],
+          basket: [],
+          orders: [],
+          discount: false,
+          bonus: 0,
         })
         f()
-
-        setLocalEmail(email, password)
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -81,6 +71,12 @@ export const SignUp = ({navigation}) => {
           value={loginValue}
           setValue={setLoginValue}
           placeholder={"логин"}
+          secureTextEntry={false}
+        />
+        <CustomInput
+          value={nameValue}
+          setValue={setNameValue}
+          placeholder={"ФИО"}
           secureTextEntry={false}
         />
         <CustomInput

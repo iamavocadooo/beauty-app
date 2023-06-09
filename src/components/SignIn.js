@@ -21,7 +21,6 @@ export const SignIn = ({navigation}) => {
             setModalVisible(true)
           }
           console.log(user)
-          setLocalEmail(email, password)
           f()
           // ...
         })
@@ -50,27 +49,7 @@ export const SignIn = ({navigation}) => {
     //     console.log(errorMessage)
     //   })
     // }
-    useEffect(() => {
-      (async() => {
-        let data = await getLocalEmail()
-        console.log(data)
-        if (data.email) {
-        signInWithEmailAndPassword(auth, data.email, data.password)
-          .then((userCredential) => {
-            const user = userCredential.user;
-            console.log(user);
-            f();
-          })
-          .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorMessage);
-            console.log("s");
-          });
-      }
-      })()
-
-    }, [])
+    
     
     const[loginValue, setLoginValue] = useState('');
     const[passwordValue, setPasswordValue] = useState('');
@@ -85,7 +64,6 @@ export const SignIn = ({navigation}) => {
         }
             <CustomButton style={styles.button} text='Вход' onPress={() => handleSignIn(loginValue, passwordValue)}/>
             <GoSignUp setError={setError} navigation={navigation} />
-            <CustomVerl  modalVisible={modalVisible} setModalVisible={setModalVisible}/>
         </View>
     )
 }

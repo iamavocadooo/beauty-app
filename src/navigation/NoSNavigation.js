@@ -10,6 +10,7 @@ export const NoSNavigation = () => {
     return (
       <Drawer.Navigator
         screenOptions={({navigation}) => ({
+          headerShown: false,
           headerLeft: () => <CustomDrawer size={24} name="menu" navigation={navigation} />,
         })}
         drawerContent={(props) => <NoSDrawerContent {...props} />}

@@ -7,7 +7,6 @@ import { SignUp } from "../components/SignUp"
 export const SignUpScreen = ({navigation})=>{
     return (
       <View style={styles.wrapper}>
-        <Image style={styles.logo} source={Logo} resizeMode="contain" />
         <SignUp navigation={navigation} />
       </View>
     );
@@ -15,10 +14,12 @@ export const SignUpScreen = ({navigation})=>{
 
 const styles = StyleSheet.create({
     wrapper: {
+      flex: 1,
         backgroundColor: '#fff',
         width: '100%',
         alignItems: 'center',
-        padding: 20
+        padding: 20,
+        justifyContent: 'center'
     },
     logo: {
         width: '70%',

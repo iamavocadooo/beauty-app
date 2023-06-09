@@ -8,7 +8,6 @@ import { AppContext } from "../ContextApi/context";
 export const SignInScreen = ({navigation}) => {
     return(
         <View style={styles.wrapper}>
-            <Image style={styles.logo} source={Logo} resizeMode="contain"/>
             <SignIn navigation={navigation}/>
         </View>
     )
@@ -16,10 +15,12 @@ export const SignInScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
     wrapper: {
+        flex: 1,
         backgroundColor: '#fff',
         width: '100%',
         alignItems: 'center',
-        padding: 20
+        padding: 20,
+        justifyContent: 'center'
     },
     logo: {
         width: '70%',

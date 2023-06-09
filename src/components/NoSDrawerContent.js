@@ -25,7 +25,7 @@ export const NoSDrawerContent = (props) => {
     return (
         <DrawerContentScrollView {...props}>
           <DrawerItemList {...props} />
-          <DrawerItem label="Режим студента" onPress={() => checkStudentAccess() }/>
+          <DrawerItem label="Режим студента"/>
           <DrawerItem label="Выйти из аккаунта" onPress={handleSignOut}/>
           <CustomModal modalVisible={modalVisible} setModalVisible={setModalVisible} navigation={props.navigation}/>
           
